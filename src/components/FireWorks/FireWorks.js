@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
-import { makeStyles } from '@material-ui/core';
+import { Button, makeStyles } from '@material-ui/core';
 import * as FireworkCanvas from 'fireworks-canvas';
 
 const useStyles = makeStyles((theme) => {
@@ -17,18 +17,29 @@ const useStyles = makeStyles((theme) => {
       transform: 'translate(-50%, -50%)',
       color: 'white',
       backgroundColor: 'black'
-    }
+    },
+    button: {
+      backgroundColor: 'white',
+      '&:hover': {
+        backgroundColor: 'white',
+      }
+    },
   }
 })
 
+const play = (audio) => {
+  if (audio) audio.play();
+}
+
 function FireWorks() {
   const classes = useStyles();
-  const ref = useRef();
+  const refFierworks = useRef();
+  const refCow = useRef();
   const [fireWorks, setFireWorks] = useState(null);
 
   useEffect(() => {
-      const container = ref.current;
-      if (ref.current && !fireWorks) {
+      const container = refFierworks.current;
+      if (refFierworks.current && !fireWorks) {
         const options = {
           maxRockets: 5, // max # of rockets to spawn
           rocketSpawnInterval: 500, // millisends to check if new rockets should spawn
@@ -41,16 +52,17 @@ function FireWorks() {
         }
         setFireWorks(new FireworkCanvas(container, options))
       }
-  }, [ref, fireWorks]);
+  }, [refFierworks, fireWorks]);
 
   if (fireWorks) {
     fireWorks.start();
   }
 
   return (
-    <div className={classes.fireworksContainer} ref={ref}>
+    <div className={classes.fireworksContainer} ref={refFierworks}>
       <div className={classes.fireworksTitle} >
-        Hello World
+        <audio ref={refCow} src="http://www.classicalmusicproject.com/Joshuahomework/Bessie.wav" />
+        <Button className={classes.button} onClick={() => play(refCow.current)}>Mooo</Button>
       </div>
     </div>
   )
