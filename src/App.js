@@ -1,10 +1,10 @@
 import './App.css';
-import FireWorks from './components/FireWorks';
+import BirthdayBash from './components/BirthdayBash';
 
 function App() {
   return (
     <div className="App">
-      <FireWorks />
+      <BirthdayBash />
     </div>
   );
 }
