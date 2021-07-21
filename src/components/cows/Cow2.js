@@ -1,11 +1,13 @@
 import React from "react";
 
-function Cow2() {
+function Cow2({ width=400, height=200 }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       version="1"
       viewBox="0 0 586.22 564.54"
+      width={width}
+      height={height}
     >
       <g transform="translate(-47.04 -306.37)">
         <g transform="matrix(.4749 0 0 .6102 293.53 138.46)">

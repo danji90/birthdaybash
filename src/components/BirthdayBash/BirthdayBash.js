@@ -41,24 +41,12 @@ const useStyles = makeStyles((theme) => {
     button: {
       backgroundColor: 'transparent',
       width: 200,
-      animation: "pulse 1s infinite",
+      animation: "$pulse 1s infinite",
       '&:hover': {
         backgroundColor: 'transparent',
       }
     },
-    "@global": {
-      "@keyframes pulse": {
-        "0%": {
-          width: 200
-        },
-        "50%": {
-          width: 210
-        },
-        "100%": {
-          width: 200,
-        }
-      }
-    },
+    "@keyframes pulse": theme.createPulse(),
   }
 })
 
@@ -122,9 +110,7 @@ function BirthdayBash() {
             </div>
             <br />
           </div>
-          <div id="next-1" style={{ height: '100vh' }}>
-            <Phase1 />
-          </div>
+          <Phase1 />
         </div>
       </div>
     </>

@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => {
       width: (props) => props.width || 'auto',
       height: (props) => props.height || 'auto',
       borderRadius: (props) => `${props.width || 200}px / ${props.height || 75}px`,
-      padding: 50,
+      padding: (props) => props.padding || 50,
       backgroundColor: 'white',
       position: 'relative',
       zIndex: 3,
@@ -56,8 +56,8 @@ const useStyles = makeStyles((theme) => {
   }
 });
 
-const SpeechBubble = ({ children, width, height, anchor=defaultAnchor, containerStyle, border }) => {
-  const classes = useStyles({ width, height, anchor, border });
+const SpeechBubble = ({ children, width, height, anchor=defaultAnchor, containerStyle, border, padding }) => {
+  const classes = useStyles({ width, height, anchor, border, padding });
 
   return (
     <div style={containerStyle}>
