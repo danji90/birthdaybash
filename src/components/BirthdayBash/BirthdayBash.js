@@ -1,9 +1,10 @@
 import React, { useRef, useEffect, useState } from 'react';
-import { Button, makeStyles, Typography } from '@material-ui/core';
+import { Button, makeStyles } from '@material-ui/core';
 import * as FireworkCanvas from 'fireworks-canvas';
 
-import CowFace from '../cows/CowFace.js';
+import Cow1 from '../cows/Cow1.js';
 import SpeechBubble from '../SpeechBubble/SpeechBubble';
+import Phase1 from '../Phase1/Phase1.js';
 
 const useStyles = makeStyles((theme) => {
   return {
@@ -12,20 +13,19 @@ const useStyles = makeStyles((theme) => {
       width: '100vw',
       height: '100vh',
       backgroundColor: 'black',
-      overflow: 'auto',
+      overflowY: 'auto',
+      overflowX: 'hidden',
     },
     appContent: {
       position: 'relative',
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
-      height: 2000,
       width: '100%',
     },
     mainContainer: {
-      padding: 10,
       backgroundColor: 'transparent',
-      width: '80vw',
+      width: '100vw',
       maxWidth: 1000,
     },
     landing: {
@@ -36,11 +36,12 @@ const useStyles = makeStyles((theme) => {
       alignItems: 'center',
       color: 'white',
       height: '100vh',
+      margin: '0 20px'
     },
     button: {
       backgroundColor: 'transparent',
       width: 200,
-      animation: "pulse 1s infinite", // --> this works
+      animation: "pulse 1s infinite",
       '&:hover': {
         backgroundColor: 'transparent',
       }
@@ -60,10 +61,6 @@ const useStyles = makeStyles((theme) => {
     },
   }
 })
-
-const play = (audio) => {
-  if (audio) audio.play();
-}
 
 function BirthdayBash() {
   const classes = useStyles();
@@ -109,16 +106,24 @@ function BirthdayBash() {
       <div className={classes.fireworksContainer} ref={refFireworks} />
       <div className={classes.appContent}>
         <div className={classes.mainContainer}>
-          <div className={classes.landing}>
-            <SpeechBubble containerStyle={{ top: 225, right: window.innerWidth * 0.1}}>
+          <div id="landing-zone" className={classes.landing}>
+            <SpeechBubble
+              containerStyle={{ top: 225}}
+            >
               <h2>Glückwunsch!!</h2>
-              <p>Du Hast es zu Kathrin's kuhlen Birthday Bash geschafft!</p>
+              <p>Du hast es zu Kathrin's kuhlen Birthday Bash geschafft!</p>
               <p>Streichel mich für mehr Stumpfsinn </p>
             </SpeechBubble>
             <audio ref={refCow} src="http://www.classicalmusicproject.com/Joshuahomework/Bessie.wav" />
             <div style={{ width: 210, height: 210 }}>
-              <Button className={classes.button} onClick={() => play(refCow.current)}><CowFace /></Button>
+              <Button href="#next-1" className={classes.button} onClick={() => {
+                if (refCow.current) refCow.current.play()
+              }}><Cow1 /></Button>
             </div>
+            <br />
+          </div>
+          <div id="next-1" style={{ height: '100vh' }}>
+            <Phase1 />
           </div>
         </div>
       </div>

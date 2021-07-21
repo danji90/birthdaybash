@@ -1,6 +1,6 @@
 import React from "react";
 
-function CowFace() {
+function Cow1() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -145,4 +145,4 @@ function CowFace() {
   );
 }
 
-export default CowFace;
+export default Cow1;
