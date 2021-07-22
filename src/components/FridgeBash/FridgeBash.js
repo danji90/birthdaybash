@@ -6,6 +6,7 @@ import Cow3 from '../cows/Cow3';
 import SpeechBubble from '../SpeechBubble/SpeechBubble';
 import Fridge from '../Fridge/Fridge';
 import explosion from '../../images/explosion2.gif';
+import zap from '../../images/hit.png';
 
 const useStyles = makeStyles((theme) => {
   return {
@@ -34,34 +35,56 @@ const useStyles = makeStyles((theme) => {
       transform: 'translate(-50%, -50%)',
       height: '80vh',
       zIndex: 3,
+    },
+    hit: {
+      position: 'absolute',
+      transform: 'translate(-50%, -50%)',
+      height: 100,
+      width: 100,
+      zIndex: 3,
     }
   }
 });
 
 let explodeTimeout;
+let hitTimeout;
 
 function FridgeBash() {
   const classes = useStyles();
   const [fridgeHits, setFridgeHits] = useState(0);
   const [explode, setExplode] = useState(false);
+  const [hit, setHit] = useState(false);
 
   useEffect(() => {
-    clearTimeout(explodeTimeout);
-    explodeTimeout = setTimeout(() => {
+      if (hit) {
+        clearTimeout(hitTimeout);
+        hitTimeout = setTimeout(() => {
+           setHit(false);
+         }, 100);
+       }
       if (explosion) {
-        setExplode(false);
-      }  
-    }, 800);
-  }, [explode]);
+        clearTimeout(explodeTimeout);
+         explodeTimeout = setTimeout(() => {
+            setExplode(false);
+          }, 800);
+        }
+  }, [explode, hit]);
 
   return (
     <div id="fridge-bash" className={classes.fridgeBash}>
       <div style={{ padding: '20px 0' }}>
+        {hit && <img style={{ top: hit.top, left: hit.left}}className={classes.hit} src={zap} alt="explode" />}
         {explode && <img className={classes.explode} src={explosion} alt="explode" />}
         {fridgeHits < 10 && ( 
         <Button
             className={`${classes.button} ${classes.fridge}`}
-            onClick={() => {
+            onClick={(evt) => {
+              const clickCoordinate = {
+                left: evt.clientX,
+                top: evt.clientY,
+              };
+              console.log(clickCoordinate);
+              setHit(clickCoordinate)
               setFridgeHits(fridgeHits + 1);
               if (fridgeHits >= 9) {
                 setExplode(true);
