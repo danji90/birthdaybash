@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => {
     next1: {
       height: '100%',
       width: '100%',
-      padding: '0 10px 10px',
+      padding: '0 10px 0',
       backgroundColor: '#cbe2ed',
       overflow: 'hidden',
       position: 'relative',
@@ -64,7 +64,7 @@ const useStyles = makeStyles((theme) => {
     },
     cow3: {
       position: 'absolute',
-      bottom: '15%',
+      bottom: '20%',
       animation: "$pulseCow3 1s infinite",
     },
     cowFlipped: {
@@ -72,12 +72,12 @@ const useStyles = makeStyles((theme) => {
     },
     signWrapper: {
       position: 'absolute',
-      bottom: -100,
-      right: -20,
+      bottom: -50,
+      right: 5,
     },
     signRotate: {
       height: 200,
-      width: 300,
+      width: 250,
       transform: 'rotate(10deg)',
       '& svg': {
         width: '100%',
@@ -133,15 +133,22 @@ function Phase1() {
         </div>
         <div>
           <audio ref={refCow2} src="http://thecyberbuddy.com/sounds/cow.wav" />
-          <Button className={`${classes.button} ${classes.cow3}`} onClick={() => {
-            if (refCow2.current) refCow2.current.play();
-            setCowsState({ ...cowsState, cow3: true})
-          }}><Cow3 width={200} height={100}/></Button>
+          <Button
+            className={`${classes.button} ${classes.cow3}`}
+            onClick={() => {
+              if (refCow2.current) refCow2.current.play();
+              setCowsState({ ...cowsState, cow3: true})
+            }}
+          >
+            <Cow3 width={200} height={100}/>
+          </Button>
         </div>
         <Slide direction="up" in={cowsState.cow1 && cowsState.cow2}>
           <div className={classes.signWrapper}>
             <div className={classes.signRotate}>
-              <Sign />
+              <Button href="#fridge-bash" className={classes.button}>
+                <Sign />
+              </Button>
             </div>
           </div>
         </Slide>

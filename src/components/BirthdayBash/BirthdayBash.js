@@ -5,6 +5,7 @@ import * as FireworkCanvas from 'fireworks-canvas';
 import Cow1 from '../cows/Cow1.js';
 import SpeechBubble from '../SpeechBubble/SpeechBubble';
 import Phase1 from '../Phase1/Phase1.js';
+import FridgeBash from '../FridgeBash/FridgeBash.js';
 
 const useStyles = makeStyles((theme) => {
   return {
@@ -104,13 +105,20 @@ function BirthdayBash() {
             </SpeechBubble>
             <audio ref={refCow} src="http://www.classicalmusicproject.com/Joshuahomework/Bessie.wav" />
             <div style={{ width: 210, height: 210 }}>
-              <Button href="#next-1" className={classes.button} onClick={() => {
-                if (refCow.current) refCow.current.play()
-              }}><Cow1 /></Button>
+              <Button 
+                href="#next-1"
+                className={classes.button}
+                onClick={() => {
+                  if (refCow.current) refCow.current.play()
+                }}
+              >
+                <Cow1 />
+              </Button>
             </div>
             <br />
           </div>
           <Phase1 />
+          <FridgeBash />
         </div>
       </div>
     </>
