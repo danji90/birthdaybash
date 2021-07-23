@@ -4,8 +4,10 @@ import * as FireworkCanvas from 'fireworks-canvas';
 
 import Cow1 from '../cows/Cow1.js';
 import SpeechBubble from '../SpeechBubble/SpeechBubble';
-import Phase1 from '../Phase1/Phase1.js';
+import CowMeadow from '../CowMeadow/CowMeadow.js';
 import FridgeBash from '../FridgeBash/FridgeBash.js';
+import BikeBash from '../BikeBash/BikeBash.js';
+import BashIntro from '../BashIntro/BashIntro.js';
 
 const useStyles = makeStyles((theme) => {
   return {
@@ -58,6 +60,10 @@ function BirthdayBash() {
   const [fireWorks, setFireWorks] = useState(null);
 
   useEffect(() => {
+    window.onscroll = () => {}
+}, [refFireworks, fireWorks]);
+
+  useEffect(() => {
       const container = refFireworks.current;
       const options = {
         maxRockets: 5, // max # of rockets to spawn
@@ -106,10 +112,11 @@ function BirthdayBash() {
             <audio ref={refCow} src="http://www.classicalmusicproject.com/Joshuahomework/Bessie.wav" />
             <div style={{ width: 210, height: 210 }}>
               <Button 
-                href="#next-1"
                 className={classes.button}
                 onClick={() => {
-                  if (refCow.current) refCow.current.play()
+                  if (refCow.current) refCow.current.play();
+                  const fridgeBashIntro = document.getElementById('fridge-bash-intro')
+                  fridgeBashIntro.scrollIntoView({ behavior: 'smooth'})
                 }}
               >
                 <Cow1 />
@@ -117,8 +124,10 @@ function BirthdayBash() {
             </div>
             <br />
           </div>
-          <Phase1 />
+          <BashIntro />
           <FridgeBash />
+          <BikeBash />
+          <CowMeadow />
         </div>
       </div>
     </>

@@ -1,12 +1,12 @@
 import React from "react";
 
-function Fridge() {
+function Fridge({ width="289.996", height="567.332" }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
-      width="289.996"
-      height="567.332"
+      width={width}
+      height={height}
       version="1.1"
     >
       <defs>

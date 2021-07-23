@@ -1,23 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import { makeStyles, Button } from '@material-ui/core';
 
-import Fridge from '../Fridge/Fridge';
 import explosion from '../../images/explosion2.gif';
 import zap from '../../images/hit.png';
+import Bicycle from '../Bicycle/Bicycle';
 
 const useStyles = makeStyles((theme) => {
   return {
-    fridgeBash: {
+    bikeBash: {
       height: '100vh',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
       position: 'relative'
     }, 
-    fridge: {
+    bike: {
       animation: '$pulseFridge 1s infinite',
       padding: '20px 0',
-      height: '50vh',
+      // height: '50vh',
       '& svg': {
         width: '100%',
         height: '100%',
@@ -57,26 +57,26 @@ function FridgeBash() {
         clearTimeout(hitTimeout);
         hitTimeout = setTimeout(() => {
            setHit(false);
-        }, 100);
-      }
-      if (explode) {
+         }, 100);
+       }
+      if (explosion) {
         clearTimeout(explodeTimeout);
-        explodeTimeout = setTimeout(() => {
-          setExplode(false);
-          const bikeBash = document.getElementById('bike-bash');
-          bikeBash.scrollIntoView({ behavior: 'smooth'});
-        }, 800);
-      }
-  }, [explode, hit, fridgeHits]);
+         explodeTimeout = setTimeout(() => {
+            setExplode(false);
+            const cowMeadow = document.getElementById('cow-meadow');
+            cowMeadow.scrollIntoView({ behavior: 'smooth'});
+          }, 800);
+        }
+  }, [explode, hit]);
 
   return (
-    <div id="fridge-bash" className={classes.fridgeBash}>
+    <div id="bike-bash" className={classes.bikeBash}>
       <div style={{ padding: '20px 0' }}>
         {hit && <img style={{ top: hit.top, left: hit.left}} className={classes.hit} src={zap} alt="explode" />}
         {explode && <img className={classes.explode} src={explosion} alt="explode" />}
         {fridgeHits < 10 && ( 
         <Button
-          className={`${classes.fridge}`}
+          className={`${classes.bike}`}
           onClick={(evt) => {
             const clickCoordinate = {
               left: evt.clientX,
@@ -90,8 +90,9 @@ function FridgeBash() {
             }
           }}
         >
-          <Fridge />
-        </Button>)}
+          <Bicycle />
+        </Button>
+        )}
       </div>
     </div>
   )

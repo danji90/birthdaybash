@@ -8,7 +8,7 @@ import Sign from '../Sign/Sign';
 
 const useStyles = makeStyles((theme) => {
   return {
-    phase1Wrapper: {
+    cowMeadowWrapper: {
       height: '100vh',
       display: 'flex',
       alignItems: 'center',
@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => {
       left: '-30%',
       top: '35%',
       width: 1500,
-      height: 1000,
+      height: '100vh',
     },
     sun: {
       position: 'absolute',
@@ -90,14 +90,15 @@ const useStyles = makeStyles((theme) => {
   }
 });
 
-function Phase1() {
+function CowMeadow() {
   const classes = useStyles();
   const refCow1 = useRef();
   const refCow2 = useRef();
+  const refCow3 = useRef();
   const [cowsState, setCowsState] = useState({cow1: false, cow2: false, cow3: false})
   console.log(cowsState);
   return (
-    <div id="next-1" className={classes.phase1Wrapper}>
+    <div id="cow-meadow" className={classes.cowMeadowWrapper}>
       <Paper className={classes.next1} square>
         <div className={classes.hill1} />
         <div className={classes.sun} />
@@ -112,8 +113,8 @@ function Phase1() {
                 transform: 'rotate(183deg)'
               }}
             >
-              <p>Heute werden keine Entscheidungen gefällt, sondern nur entspannt, wiedergekaut und die schönen Dinge im Leben genossen.</p>
-              <p>Du musst uns alle streicheln.</p>
+              <p>Jetzt wo wir Einiges an Balast vernichtet haben, wird nur mehr entspannt, wiedergekaut und die schönen Dinge im Leben genossen.</p>
+              <p>Wir fangen an mit Kühe streicheln.</p>
             </SpeechBubble>
             <audio ref={refCow1} src="https://dight310.byu.edu/media/audio/FreeLoops.com/2/2/Cow.wav-8988-Free-Loops.com.mp3" />
             <div className={classes.cow1}>
@@ -132,11 +133,11 @@ function Phase1() {
           }}><Cow2 width={100} height={50}/></Button>
         </div>
         <div>
-          <audio ref={refCow2} src="http://thecyberbuddy.com/sounds/cow.wav" />
+          <audio ref={refCow3} src="http://www.classicalmusicproject.com/Joshuahomework/Bessie.wav" />
           <Button
             className={`${classes.button} ${classes.cow3}`}
             onClick={() => {
-              if (refCow2.current) refCow2.current.play();
+              if (refCow3.current) refCow3.current.play();
               setCowsState({ ...cowsState, cow3: true})
             }}
           >
@@ -157,4 +158,4 @@ function Phase1() {
   )
 }
 
-export default Phase1
+export default CowMeadow;
