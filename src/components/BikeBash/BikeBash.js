@@ -17,7 +17,6 @@ const useStyles = makeStyles((theme) => {
     bike: {
       animation: '$pulseFridge 1s infinite',
       padding: '20px 0',
-      // height: '50vh',
       '& svg': {
         width: '100%',
         height: '100%',
@@ -59,7 +58,7 @@ function FridgeBash() {
            setHit(false);
          }, 100);
        }
-      if (explosion) {
+      if (explode) {
         clearTimeout(explodeTimeout);
          explodeTimeout = setTimeout(() => {
             setExplode(false);
@@ -82,7 +81,6 @@ function FridgeBash() {
               left: evt.clientX,
               top: evt.clientY,
             };
-            console.log(clickCoordinate);
             setHit(clickCoordinate)
             setFridgeHits(fridgeHits + 1);
             if (fridgeHits >= 9) {

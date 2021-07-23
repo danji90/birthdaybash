@@ -95,8 +95,8 @@ function CowMeadow() {
   const refCow1 = useRef();
   const refCow2 = useRef();
   const refCow3 = useRef();
-  const [cowsState, setCowsState] = useState({cow1: false, cow2: false, cow3: false})
-  console.log(cowsState);
+  const [cowsState, setCowsState] = useState({cow1: false, cow2: false, cow3: false});
+  
   return (
     <div id="cow-meadow" className={classes.cowMeadowWrapper}>
       <Paper className={classes.next1} square>

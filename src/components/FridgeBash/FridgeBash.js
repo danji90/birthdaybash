@@ -82,7 +82,6 @@ function FridgeBash() {
               left: evt.clientX,
               top: evt.clientY,
             };
-            console.log(clickCoordinate);
             setHit(clickCoordinate)
             setFridgeHits(fridgeHits + 1);
             if (fridgeHits >= 9) {
