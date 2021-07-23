@@ -4,6 +4,7 @@ import purple from '@material-ui/core/colors/purple';
 import green from '@material-ui/core/colors/green';
 
 import BirthdayBash from './components/BirthdayBash';
+import { useEffect } from 'react';
 
 const theme = createTheme({
   createPulse: (grow) => {
@@ -35,6 +36,9 @@ const theme = createTheme({
 });
 
 function App() {
+  useEffect(() => {
+    window.history.scrollRestoration = "manual"
+  }, []);
   return (
     <ThemeProvider theme={theme}>
       <div className="App">

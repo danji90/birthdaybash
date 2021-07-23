@@ -57,15 +57,7 @@ function BirthdayBash() {
   const classes = useStyles();
   const refFireworks = useRef();
   const refCow = useRef();
-  const refAppContent = useRef();
   const [fireWorks, setFireWorks] = useState(null);
-
-  useEffect(() => {
-    if (refAppContent.current) {
-      refAppContent.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
-    }
-    
-}, [refAppContent]);
 
   useEffect(() => {
       const container = refFireworks.current;
@@ -103,7 +95,7 @@ function BirthdayBash() {
   return (
     <>
       <div className={classes.fireworksContainer} ref={refFireworks} />
-      <div className={classes.appContent} ref={refAppContent}>
+      <div className={classes.appContent}>
         <div className={classes.mainContainer}>
           <div id="landing-zone" className={classes.landing}>
             <SpeechBubble
