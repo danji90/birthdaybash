@@ -48,7 +48,7 @@ function BashIntro() {
           transform: 'rotate(160deg)'
           }}
         >
-          <p>Zuerst lassen wir etwas Dampf ab. Lass all deinen Frust auf vergangene Sorgen aus, auf nimmer wieder sehen!</p>
+          <p>Zuerst lassen wir etwas Dampf ab. Lass all deinen Frust auf vergangene Sorgen raus, auf nimmer wieder sehen!</p>
         </SpeechBubble>
         <div style={{ transform: 'rotate(-10deg)', width: 200 }}>
           <Button 
