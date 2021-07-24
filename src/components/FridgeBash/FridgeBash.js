@@ -17,12 +17,13 @@ const useStyles = makeStyles((theme) => {
     fridge: {
       animation: '$pulseFridge 1s infinite',
       padding: '20px 0',
-      height: '50vh',
+      height: 200,
       '& svg': {
         width: '100%',
         height: '100%',
       },
       zIndex: 2,
+      position: 'relative',
     },
     "@keyframes pulseFridge": theme.createPulse(),
     explode: {
@@ -35,7 +36,6 @@ const useStyles = makeStyles((theme) => {
     },
     hit: {
       position: 'absolute',
-      transform: 'translate(-50%, -50%)',
       height: 100,
       width: 100,
       zIndex: 3,
@@ -72,15 +72,14 @@ function FridgeBash() {
   return (
     <div id="fridge-bash" className={classes.fridgeBash}>
       <div style={{ padding: '20px 0' }}>
-        {hit && <img style={{ top: hit.top, left: hit.left}} className={classes.hit} src={zap} alt="explode" />}
         {explode && <img className={classes.explode} src={explosion} alt="explode" />}
         {fridgeHits < 10 && ( 
         <Button
           className={`${classes.fridge}`}
           onClick={(evt) => {
             const clickCoordinate = {
-              left: evt.clientX,
-              top: evt.clientY,
+              left: evt.nativeEvent.layerX - 40,
+              top: evt.nativeEvent.layerY - 220,
             };
             setHit(clickCoordinate)
             setFridgeHits(fridgeHits + 1);
@@ -89,6 +88,7 @@ function FridgeBash() {
             }
           }}
         >
+          {hit && <img style={{ top: hit.top, left: hit.left}} className={classes.hit} src={zap} alt="explode" />}
           <Fridge />
         </Button>)}
       </div>

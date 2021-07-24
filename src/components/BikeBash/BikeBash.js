@@ -22,6 +22,7 @@ const useStyles = makeStyles((theme) => {
         height: '100%',
       },
       zIndex: 2,
+      position: 'relative',
     },
     "@keyframes pulseFridge": theme.createPulse(),
     explode: {
@@ -34,7 +35,6 @@ const useStyles = makeStyles((theme) => {
     },
     hit: {
       position: 'absolute',
-      transform: 'translate(-50%, -50%)',
       height: 100,
       width: 100,
       zIndex: 3,
@@ -71,15 +71,14 @@ function FridgeBash() {
   return (
     <div id="bike-bash" className={classes.bikeBash}>
       <div style={{ padding: '20px 0' }}>
-        {hit && <img style={{ top: hit.top, left: hit.left}} className={classes.hit} src={zap} alt="explode" />}
         {explode && <img className={classes.explode} src={explosion} alt="explode" />}
         {fridgeHits < 10 && ( 
         <Button
           className={`${classes.bike}`}
           onClick={(evt) => {
             const clickCoordinate = {
-              left: evt.clientX,
-              top: evt.clientY,
+              left: evt.nativeEvent.layerX - 50,
+              top: evt.nativeEvent.layerY - 30,
             };
             setHit(clickCoordinate)
             setFridgeHits(fridgeHits + 1);
@@ -88,6 +87,7 @@ function FridgeBash() {
             }
           }}
         >
+          {hit && <img style={{ top: hit.top, left: hit.left}} className={classes.hit} src={zap} alt="explode" />}
           <Bicycle />
         </Button>
         )}
