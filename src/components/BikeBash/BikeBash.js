@@ -32,6 +32,7 @@ const useStyles = makeStyles((theme) => {
       left: '50%',
       transform: 'translate(-50%, -50%)',
       height: '80vh',
+      maxHeight: 500,
       zIndex: 3,
     },
     hit: {
@@ -73,7 +74,7 @@ function FridgeBash() {
   return (
     <div id="bike-bash" className={classes.bikeBash}>
       {modalOpen && (
-        <CowModal onClick={() => setModalOpen(false)} rotation={-10}>
+        <CowModal onClick={() => setModalOpen(false)} rotation={20}>
           <div>Mach weiter mit deiner alten Stadtschlampe!</div>
         </CowModal>
       )}

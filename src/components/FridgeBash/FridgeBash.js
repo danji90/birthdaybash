@@ -33,6 +33,7 @@ const useStyles = makeStyles((theme) => {
       left: '50%',
       transform: 'translate(-50%, -50%)',
       height: '80vh',
+      maxHeight: 800,
       zIndex: 3,
     },
     hit: {
@@ -94,7 +95,7 @@ function FridgeBash() {
   return (
     <div id="fridge-bash" className={classes.fridgeBash} ref={fridgeBashRef}>
       {modalOpen && (
-        <CowModal onClick={() => setModalOpen(false)}>
+        <CowModal onClick={() => setModalOpen(false)} bubbleStyle={{ maxWidth: '50%', minWidth: 250 }}>
           <p>Zuerst lassen wir etwas Dampf ab. Lass all deinen Frust auf vergangene Sorgen raus, auf nimmer wieder sehen! </p>
           <p>Schlag den alten, kaputten Kühlschrank aus deinem Gedächtnis!</p>
         </CowModal>

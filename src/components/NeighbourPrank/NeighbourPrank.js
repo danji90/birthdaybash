@@ -1,9 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { makeStyles, Button, Slide } from '@material-ui/core';
 
-import explosion from '../../images/explosion2.gif';
-import zap from '../../images/hit.png';
-import Bicycle from '../Bicycle/Bicycle';
 import CowModal from '../CowModal/CowModal';
 import Neighbour from '../Neighbour/Neighbour';
 import CardBox from '../CardBox/CardBox';
@@ -20,12 +17,16 @@ const useStyles = makeStyles((theme) => {
     neighbourWrapper: {
       position: 'relative',
     },
+    neighbour: {
+      animation: '$pulseNeighbour 1s infinite'
+    },
     box: {
       position: 'absolute',
       top: -40,
       left: 40,
       zIndex: 1300,
-    }
+    },
+    "@keyframes pulseNeighbour": theme.createPulse(1.05),
   }
 });
 
@@ -39,7 +40,7 @@ function NeighbourPrank() {
   return (
     <div id="neighbour-prank" className={classes.neighbourPrank}>
       {modalOpen && (
-        <CowModal onClick={() => setModalOpen(false)} rotation={-10}>
+        <CowModal onClick={() => setModalOpen(false)} rotation={-20} bubbleStyle={{ maxWidth: '50%', minWidth: 250 }}>
           <div>Setz Gerda der Nachbarin einen Karton auf den Kopf, damit sie dich nicht mehr findet und aufhört zu nörgeln.</div>
         </CowModal>
       )}
@@ -60,7 +61,9 @@ function NeighbourPrank() {
             }, 1500)
           }}
         >
-          <Neighbour />
+          <div className={classes.neighbour}>
+            <Neighbour />
+          </div>
         </Button>
       </div>
     </div>

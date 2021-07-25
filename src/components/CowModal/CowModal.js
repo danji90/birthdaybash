@@ -24,23 +24,24 @@ const useStyles = makeStyles((theme) => {
         justifyContent: 'center',
       },
       cowFace: {
-        transform: (props) => `rotate(${props.rotation}deg)`,
         animation: '$cowFacePulse 1s infinite'
       },
       "@keyframes cowFacePulse": theme.createPulse(),
     }
   });
 
-function CowModal({ children, onClick, rotation=0 }) {
+function CowModal({ children, onClick, rotation=0, bubbleStyle }) {
     const classes = useStyles({ rotation });
     return (
         <Button className={classes.modal} onClick={() => onClick()}>
         <div className={classes.modalContent}>
-          <SpeechBubble>
+          <SpeechBubble containerStyle={bubbleStyle}>
             {children}
           </SpeechBubble>
-          <div className={classes.cowFace}>
-            <CowFace width={200} height={200} />
+          <div style={{ transform: `rotate(${rotation}deg)` }}>
+            <div className={classes.cowFace}>
+                <CowFace width={200} height={200} />
+            </div>
           </div>
         </div>
       </Button>
