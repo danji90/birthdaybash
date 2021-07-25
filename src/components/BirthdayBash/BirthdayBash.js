@@ -7,6 +7,7 @@ import SpeechBubble from '../SpeechBubble/SpeechBubble';
 import CowMeadow from '../CowMeadow/CowMeadow.js';
 import FridgeBash from '../FridgeBash/FridgeBash.js';
 import BikeBash from '../BikeBash/BikeBash.js';
+import NeighbourPrank from '../NeighbourPrank/NeighbourPrank.js';
 
 const useStyles = makeStyles((theme) => {
   return {
@@ -123,6 +124,7 @@ function BirthdayBash() {
           </div>
           <FridgeBash />
           <BikeBash />
+          <NeighbourPrank />
           <CowMeadow />
         </div>
       </div>

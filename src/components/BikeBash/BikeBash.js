@@ -64,8 +64,8 @@ function FridgeBash() {
         clearTimeout(explodeTimeout);
          explodeTimeout = setTimeout(() => {
             setExplode(false);
-            const cowMeadow = document.getElementById('cow-meadow');
-            cowMeadow.scrollIntoView({ behavior: 'smooth'});
+            const neighbour = document.getElementById('neighbour-prank');
+            neighbour.scrollIntoView({ behavior: 'smooth'});
           }, 800);
         }
   }, [explode, hit]);
