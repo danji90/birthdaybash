@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import { Button, makeStyles } from '@material-ui/core';
 import * as FireworkCanvas from 'fireworks-canvas';
 
-import Cow1 from '../cows/Cow1.js';
+import CowFace from '../cows/CowFace.js';
 import SpeechBubble from '../SpeechBubble/SpeechBubble';
 import CowMeadow from '../CowMeadow/CowMeadow.js';
 import FridgeBash from '../FridgeBash/FridgeBash.js';
@@ -55,11 +55,24 @@ const useStyles = makeStyles((theme) => {
   }
 })
 
+const disableScroll = (evt) => {
+  evt.preventDefault();
+  evt.stopPropagation();
+}
+
 function BirthdayBash() {
   const classes = useStyles();
   const refFireworks = useRef();
   const refCow = useRef();
+  const refAppContent = useRef();
   const [fireWorks, setFireWorks] = useState(null);
+
+  useEffect(() => {
+    if (refAppContent && refAppContent.current) {
+      refAppContent.current.addEventListener('mousewheel', disableScroll);
+      refAppContent.current.addEventListener('touchmove', disableScroll)
+    }
+  }, [refAppContent])
 
   useEffect(() => {
       const container = refFireworks.current;
@@ -97,7 +110,7 @@ function BirthdayBash() {
   return (
     <>
       <div className={classes.fireworksContainer} ref={refFireworks} />
-      <div className={classes.appContent}>
+      <div className={classes.appContent} ref={refAppContent}>
         <div className={classes.mainContainer}>
           <div id="landing-zone" className={classes.landing}>
             <SpeechBubble
@@ -117,7 +130,7 @@ function BirthdayBash() {
                   fridgeBashIntro.scrollIntoView({ behavior: 'smooth'})
                 }}
               >
-                <Cow1 />
+                <CowFace width={200} height={200}/>
               </Button>
             </div>
             <br />
