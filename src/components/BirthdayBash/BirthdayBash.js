@@ -25,8 +25,6 @@ const useStyles = makeStyles((theme) => {
       flexDirection: 'column',
       alignItems: 'center',
       width: '100%',
-      '-webkit-overflow-scrolling': 'touch',
-      overflowY: 'scroll',
     },
     mainContainer: {
       backgroundColor: 'transparent',
