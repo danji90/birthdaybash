@@ -32,6 +32,16 @@ const theme = createTheme({
     MuiButtonBase: {
       disableRipple: true,
     }
+  },
+  overrides: {
+    MuiButton: {
+      root: {
+        textTransform: 'none',
+        letterSpacing: 0,
+        fontSize: '1rem',
+        lineHeight: 'unset',
+      }
+    }
   }
 });
 

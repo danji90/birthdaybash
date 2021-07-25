@@ -7,7 +7,6 @@ import SpeechBubble from '../SpeechBubble/SpeechBubble';
 import CowMeadow from '../CowMeadow/CowMeadow.js';
 import FridgeBash from '../FridgeBash/FridgeBash.js';
 import BikeBash from '../BikeBash/BikeBash.js';
-import BashIntro from '../BashIntro/BashIntro.js';
 
 const useStyles = makeStyles((theme) => {
   return {
@@ -25,6 +24,8 @@ const useStyles = makeStyles((theme) => {
       flexDirection: 'column',
       alignItems: 'center',
       width: '100%',
+      '-webkit-overflow-scrolling': 'touch',
+      overflowY: 'scroll',
     },
     mainContainer: {
       backgroundColor: 'transparent',
@@ -111,7 +112,7 @@ function BirthdayBash() {
                 className={classes.button}
                 onClick={() => {
                   if (refCow.current) refCow.current.play();
-                  const fridgeBashIntro = document.getElementById('fridge-bash-intro')
+                  const fridgeBashIntro = document.getElementById('fridge-bash')
                   fridgeBashIntro.scrollIntoView({ behavior: 'smooth'})
                 }}
               >
@@ -120,7 +121,6 @@ function BirthdayBash() {
             </div>
             <br />
           </div>
-          <BashIntro />
           <FridgeBash />
           <BikeBash />
           <CowMeadow />

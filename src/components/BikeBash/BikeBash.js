@@ -4,6 +4,7 @@ import { makeStyles, Button } from '@material-ui/core';
 import explosion from '../../images/explosion2.gif';
 import zap from '../../images/hit.png';
 import Bicycle from '../Bicycle/Bicycle';
+import CowModal from '../CowModal/CowModal';
 
 const useStyles = makeStyles((theme) => {
   return {
@@ -50,6 +51,7 @@ function FridgeBash() {
   const [fridgeHits, setFridgeHits] = useState(0);
   const [explode, setExplode] = useState(false);
   const [hit, setHit] = useState(false);
+  const [modalOpen, setModalOpen] = useState(true);
 
   useEffect(() => {
       if (hit) {
@@ -70,6 +72,11 @@ function FridgeBash() {
 
   return (
     <div id="bike-bash" className={classes.bikeBash}>
+      {modalOpen && (
+        <CowModal onClick={() => setModalOpen(false)} rotation={-10}>
+          <div>Mach weiter mit deiner alten Stadtschlampe!</div>
+        </CowModal>
+      )}
       <div style={{ padding: '20px 0' }}>
         {explode && <img className={classes.explode} src={explosion} alt="explode" />}
         {fridgeHits < 10 && ( 
