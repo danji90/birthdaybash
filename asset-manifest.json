@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/birthdaybash/static/css/main.a169dfef.chunk.css",
-    "main.js": "/birthdaybash/static/js/main.f2bf4a7d.chunk.js",
-    "main.js.map": "/birthdaybash/static/js/main.f2bf4a7d.chunk.js.map",
+    "main.js": "/birthdaybash/static/js/main.45e1f496.chunk.js",
+    "main.js.map": "/birthdaybash/static/js/main.45e1f496.chunk.js.map",
     "runtime-main.js": "/birthdaybash/static/js/runtime-main.7bed158f.js",
     "runtime-main.js.map": "/birthdaybash/static/js/runtime-main.7bed158f.js.map",
     "static/js/2.9d85313d.chunk.js": "/birthdaybash/static/js/2.9d85313d.chunk.js",
@@ -19,6 +19,6 @@
     "static/js/runtime-main.7bed158f.js",
     "static/js/2.9d85313d.chunk.js",
     "static/css/main.a169dfef.chunk.css",
-    "static/js/main.f2bf4a7d.chunk.js"
+    "static/js/main.45e1f496.chunk.js"
   ]
 }
