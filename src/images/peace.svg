@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   id="svg8"
+   version="1.1"
+   viewBox="0 0 96.562332 103.79868"
+   height="103.79868mm"
+   width="96.562332mm">
+  <defs
+     id="defs2">
+    <path
+       d="M 31.12,186.14 H 320 l 76.08,49.93 -76.08,42.8 H 210.15 l 2.42,299.58 H 169.02 L 164.89,278.87 H 31.12 Z"
+       id="diFrDEn85" />
+    <text
+       id="emNqbugg"
+       x="70.349998"
+       y="217.05"
+       font-size="35"
+       font-weight="normal"
+       font-style="normal"
+       letter-spacing="0"
+       alignment-baseline="before-edge"
+       transform="translate(-7.1328671,-10.699301)"
+       style="font-style:normal;font-weight:normal;font-size:35px;line-height:100%;font-family:'Permanent Marker';letter-spacing:0;dominant-baseline:text-before-edge"
+       xml:space="preserve"
+       dominant-baseline="text-before-edge"><tspan
+         style="dominant-baseline:text-before-edge;text-anchor:start"
+         x="70.349998"
+         dy="0em"
+         alignment-baseline="before-edge"
+         dominant-baseline="text-before-edge"
+         id="tspan816">Innerer Frieden</tspan></text>
+  </defs>
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(-81.742643,-148.33875)"
+     id="layer1">
+    <g
+       transform="matrix(0.26458333,0,0,0.26458333,73.50881,99.089211)"
+       id="g831">
+      <g
+         id="g829">
+        <g
+           id="g824">
+          <use
+             height="100%"
+             width="100%"
+             y="0"
+             x="0"
+             style="opacity:1;fill:#473401;fill-opacity:1"
+             xlink:href="#diFrDEn85"
+             id="use822" />
+        </g>
+        <g
+           transform="translate(-17.857143,36.428572)"
+           id="awjUS7rB">
+          <use
+             height="100%"
+             width="100%"
+             y="0"
+             x="0"
+             style="opacity:1;fill:#fff2dd;fill-opacity:1"
+             xlink:href="#emNqbugg"
+             id="use826" />
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
