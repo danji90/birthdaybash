@@ -68,7 +68,7 @@ function BirthdayBash() {
   useEffect(() => {
     if (refAppContent && refAppContent.current) {
       refAppContent.current.addEventListener('mousewheel', disableScroll);
-      refAppContent.current.addEventListener('touchmove', disableScroll)
+      refAppContent.current.addEventListener('touchmove', disableScroll);
     }
   }, [refAppContent])
 
