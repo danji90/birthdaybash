@@ -55,20 +55,20 @@ function Outro() {
             </>
           )}
           {next === 'list' && (
-          <List >
-            <ListItem className={classes.list} alignItems='flex-start'>
-              <ListItemIcon><GiCow /></ListItemIcon>
-              <ListItemText primary="Frühstück ans Bett!"/>
-            </ListItem>
-            <ListItem className={classes.list} alignItems='flex-start'>
-              <ListItemIcon><GiCow /></ListItemIcon>
-              <ListItemText primary="Friedensverinnerlichung mit Kaffee und Kuchen"/>
-            </ListItem>
-            <ListItem className={classes.list} alignItems='flex-start'>
-              <ListItemIcon><GiCow /></ListItemIcon>
-              <ListItemText primary="Überraschung in freier Natur"/>
-            </ListItem>
-          </List>
+            <List >
+              <ListItem className={classes.list} alignItems='flex-start'>
+                <ListItemIcon><GiCow /></ListItemIcon>
+                <ListItemText primary="Frühstück ans Bett!"/>
+              </ListItem>
+              <ListItem className={classes.list} alignItems='flex-start'>
+                <ListItemIcon><GiCow /></ListItemIcon>
+                <ListItemText primary="Friedensverinnerlichung mit Kaffee und Kuchen"/>
+              </ListItem>
+              <ListItem className={classes.list} alignItems='flex-start'>
+                <ListItemIcon><GiCow /></ListItemIcon>
+                <ListItemText primary="Überraschung in freier Natur"/>
+              </ListItem>
+            </List>
           )}
           {next === 'congratulate' && (
             <h2>Happy Birthday!</h2>
