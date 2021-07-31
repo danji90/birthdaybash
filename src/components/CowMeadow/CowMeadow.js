@@ -75,6 +75,9 @@ const useStyles = makeStyles((theme) => {
       bottom: -50,
       right: 5,
     },
+    signBounce: {
+      animation: '$bounceSign 1s infinite',
+    },
     signRotate: {
       height: 200,
       width: 250,
@@ -87,6 +90,7 @@ const useStyles = makeStyles((theme) => {
     "@keyframes pulseCow1": theme.createPulse(),
     "@keyframes pulseCow2": theme.createPulse(),
     "@keyframes pulseCow3": theme.createPulse(),
+    "@keyframes bounceSign": theme.createBounce(),
   }
 });
 
@@ -146,10 +150,18 @@ function CowMeadow() {
         </div>
         <Slide direction="up" in={cowsState.cow1 && cowsState.cow2}>
           <div className={classes.signWrapper}>
-            <div className={classes.signRotate}>
-              <Button href="#fridge-bash" className={classes.button}>
-                <Sign />
-              </Button>
+            <div className={classes.signBounce}>
+              <div className={classes.signRotate}>
+                <Button 
+                  onClick={() => {
+                    const fridgeBash = document.getElementById('outro')
+                    fridgeBash.scrollIntoView({ behavior: 'smooth'})
+                  }}
+                  className={classes.button}
+                >
+                  <Sign />
+                </Button>
+              </div>
             </div>
           </div>
         </Slide>

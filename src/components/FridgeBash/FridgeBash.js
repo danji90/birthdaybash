@@ -90,8 +90,6 @@ function FridgeBash() {
       }
   }, [explode, hit, fridgeHits]);
 
-  console.log(fridgeBashRef);
-
   return (
     <div id="fridge-bash" className={classes.fridgeBash} ref={fridgeBashRef}>
       {modalOpen && (

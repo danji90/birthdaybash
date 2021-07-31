@@ -1,10 +1,10 @@
 import React, { useRef, useEffect, useState } from 'react';
-import { Button, makeStyles } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core';
 import * as FireworkCanvas from 'fireworks-canvas';
 
-import CowFace from '../cows/CowFace.js';
-import SpeechBubble from '../SpeechBubble/SpeechBubble';
 import CowMeadow from '../CowMeadow/CowMeadow.js';
+import Intro from '../Intro/Intro.js';
+import Outro from '../Outro/Outro.js';
 import FridgeBash from '../FridgeBash/FridgeBash.js';
 import BikeBash from '../BikeBash/BikeBash.js';
 import NeighbourPrank from '../NeighbourPrank/NeighbourPrank.js';
@@ -31,25 +31,6 @@ const useStyles = makeStyles((theme) => {
       width: '100vw',
       maxWidth: 1000,
     },
-    landing: {
-      position: 'relative',
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center',
-      alignItems: 'center',
-      color: 'white',
-      height: '100vh',
-      margin: '0 20px'
-    },
-    button: {
-      backgroundColor: 'transparent',
-      width: 200,
-      animation: "$pulse 1s infinite",
-      '&:hover': {
-        backgroundColor: 'transparent',
-      }
-    },
-    "@keyframes pulse": theme.createPulse(),
   }
 })
 
@@ -61,7 +42,6 @@ const disableScroll = (evt) => {
 function BirthdayBash() {
   const classes = useStyles();
   const refFireworks = useRef();
-  const refCow = useRef();
   const refAppContent = useRef();
   const [fireWorks, setFireWorks] = useState(null);
 
@@ -110,33 +90,12 @@ function BirthdayBash() {
       <div className={classes.fireworksContainer} ref={refFireworks} />
       <div className={classes.appContent} ref={refAppContent}>
         <div className={classes.mainContainer}>
-          <div id="landing-zone" className={classes.landing}>
-            <SpeechBubble
-              containerStyle={{ top: 225}}
-            >
-              <h2>Glückwunsch!!</h2>
-              <p>Du hast es zu Kathrin's kuhlen Birthday Bash geschafft!</p>
-              <p>Streichel mich für mehr Stumpfsinn </p>
-            </SpeechBubble>
-            <audio ref={refCow} src="http://www.classicalmusicproject.com/Joshuahomework/Bessie.wav" />
-            <div style={{ width: 210, height: 210 }}>
-              <Button 
-                className={classes.button}
-                onClick={() => {
-                  if (refCow.current) refCow.current.play();
-                  const fridgeBashIntro = document.getElementById('fridge-bash')
-                  fridgeBashIntro.scrollIntoView({ behavior: 'smooth'})
-                }}
-              >
-                <CowFace width={200} height={200}/>
-              </Button>
-            </div>
-            <br />
-          </div>
+          <Intro />
           <FridgeBash />
           <BikeBash />
           <NeighbourPrank />
           <CowMeadow />
+          <Outro />
         </div>
       </div>
     </>

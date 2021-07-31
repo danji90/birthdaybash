@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => {
         alignItems: 'center',
         justifyContent: 'center',
         height: '100vh',
-        backgroundColor: 'rgba(0, 0, 0, 0.5) !important',
+        backgroundColor: (props) => props.isModal ? 'rgba(0, 0, 0, 0.5) !important' : undefined,
         zIndex: 1300,
       },
       modalContent: {
@@ -30,12 +30,12 @@ const useStyles = makeStyles((theme) => {
     }
   });
 
-function CowModal({ children, onClick, rotation=0, bubbleStyle }) {
-    const classes = useStyles({ rotation });
+function CowModal({ children, onClick, rotation=0, bubbleStyle, isModal=true, bubblePadding }) {
+    const classes = useStyles({ rotation, isModal });
     return (
         <Button className={classes.modal} onClick={() => onClick()}>
         <div className={classes.modalContent}>
-          <SpeechBubble containerStyle={bubbleStyle}>
+          <SpeechBubble containerStyle={bubbleStyle} padding={bubblePadding}>
             {children}
           </SpeechBubble>
           <div style={{ transform: `rotate(${rotation}deg)` }}>

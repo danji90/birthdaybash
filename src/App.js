@@ -20,6 +20,19 @@ const theme = createTheme({
       }
     }
   },
+  createBounce: (height) => {
+    return {
+      "0%": {
+        transform: 'translate(0)',
+      },
+      "50%": {
+        transform: `translate(0, ${height || 10}px)`,
+      },
+      "100%": {
+        transform: 'translate(0)',
+      }
+    }
+  },
   palette: {
     primary: {
       main: purple[500],
