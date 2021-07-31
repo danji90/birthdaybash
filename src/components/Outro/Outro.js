@@ -49,10 +49,10 @@ function Outro() {
           bubblePadding={30}
         >
           {!next && (
-          <>
+            <>
               <p>Der digitale Teil des Geburtstagsbashs ist vorbei! Back to reality!</p>
               <p>Am Samstag den <strong>07.08.2021</strong> geht es weiter mit:</p>
-          </>
+            </>
           )}
           {next === 'list' && (
           <List >
@@ -71,7 +71,7 @@ function Outro() {
           </List>
           )}
           {next === 'congratulate' && (
-          <h2>Happy Birthday!</h2>
+            <h2>Happy Birthday!</h2>
           )}
         </CowModal>
       )}
@@ -79,11 +79,12 @@ function Outro() {
         <iframe
           width="100%"
           height="500"
-          src="https://www.youtube.com/embed/h46ry-hpM3o"
+          src="https://www.youtube.com/embed/WzQf5aJ7f0E"
           title="YouTube video player"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen></iframe>
+          allowFullScreen>
+        </iframe>
       }
     </div>
   )
