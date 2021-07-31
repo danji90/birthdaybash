@@ -35,26 +35,26 @@ const useStyles = makeStyles((theme) => {
 
 function Outro() {
   const classes = useStyles();
-  const [next, setNext] = useState(false);
+  const [state, setState] = useState(false);
 
   return (
     <div id="outro" className={classes.landing}>
-      {next !== 'end' && (
+      {state !== 'end' && (
         <CowModal onClick={() => {
-            if (!next) setNext('list');
-            if (next === 'list') setNext('congratulate');
-            if (next === 'congratulate') setNext('end');
+            if (!state) setState('list');
+            if (state === 'list') setState('congratulate');
+            if (state === 'congratulate') setState('end');
           }}
           bubbleStyle={{ maxWidth: '50%', minWidth: 250, padding: 20 }} rotation={-30} isModal={false}
           bubblePadding={30}
         >
-          {!next && (
+          {!state && (
             <>
               <p>Der digitale Teil des Geburtstagsbashs ist vorbei! Back to reality!</p>
               <p>Am Samstag den <strong>07.08.2021</strong> geht es weiter mit:</p>
             </>
           )}
-          {next === 'list' && (
+          {state === 'list' && (
             <List >
               <ListItem className={classes.list} alignItems='flex-start'>
                 <ListItemIcon><GiCow /></ListItemIcon>
@@ -70,12 +70,12 @@ function Outro() {
               </ListItem>
             </List>
           )}
-          {next === 'congratulate' && (
+          {state === 'congratulate' && (
             <h2>Happy Birthday!</h2>
           )}
         </CowModal>
       )}
-      {next === 'end' && (
+      {state === 'end' && (
         <iframe
           width="100%"
           height="500"
