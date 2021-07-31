@@ -7,29 +7,29 @@ import CowModal from '../CowModal/CowModal.js';
 const useStyles = makeStyles((theme) => {
   return {
     landing: {
-        position: 'relative',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        color: 'white',
-        height: '100vh',
-        margin: '0 20px'
-      },
-      list: {
-        display: 'flex',
-        padding: '10px 0',
-        '& .MuiListItemIcon-alignItemsFlexStart': {
-          marginRight: 8,
-          marginTop: 5,
-          minWidth: 20,
-          minHeight: 20,
-          '& svg': {
-            height: '100%',
-            width: '100%',
-          }
+      position: 'relative',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
+      color: 'white',
+      height: '100vh',
+      margin: '0 20px'
+    },
+    list: {
+      display: 'flex',
+      padding: '10px 0',
+      '& .MuiListItemIcon-alignItemsFlexStart': {
+        marginRight: 8,
+        marginTop: 5,
+        minWidth: 20,
+        minHeight: 20,
+        '& svg': {
+          height: '100%',
+          width: '100%',
         }
       }
+    }
   }
 });
 
