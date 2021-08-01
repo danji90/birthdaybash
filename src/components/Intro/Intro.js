@@ -7,24 +7,24 @@ import SpeechBubble from '../SpeechBubble/SpeechBubble';
 const useStyles = makeStyles((theme) => {
   return {
     landing: {
-        position: 'relative',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        color: 'white',
-        height: '100vh',
-        margin: '0 20px'
-      },
-      button: {
+      position: 'relative',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
+      color: 'white',
+      height: '100vh',
+      margin: '0 20px'
+    },
+    button: {
+      backgroundColor: 'transparent',
+      width: 200,
+      animation: "$pulse 1s infinite",
+      '&:hover': {
         backgroundColor: 'transparent',
-        width: 200,
-        animation: "$pulse 1s infinite",
-        '&:hover': {
-          backgroundColor: 'transparent',
-        }
-      },
-      "@keyframes pulse": theme.createPulse(),
+      }
+    },
+    "@keyframes pulse": theme.createPulse(),
   }
 });
 
