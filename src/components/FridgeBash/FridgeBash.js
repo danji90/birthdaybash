@@ -13,20 +13,20 @@ const useStyles = makeStyles((theme) => {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      position: 'relative'
-    }, 
+      position: 'relative',
+    },
     fridge: {
       animation: '$pulseFridge 1s infinite',
       padding: '20px 0',
       height: 500,
       width: 250,
       '& svg': {
-        transform: 'scale(0.8)'
+        transform: 'scale(0.8)',
       },
       zIndex: 2,
       position: 'relative',
     },
-    "@keyframes pulseFridge": theme.createPulse(),
+    '@keyframes pulseFridge': theme.createPulse(),
     explode: {
       position: 'absolute',
       top: '50%',
@@ -58,8 +58,8 @@ const useStyles = makeStyles((theme) => {
       flexDirection: 'column',
       alignItems: 'center',
       justifyContent: 'center',
-    }
-  }
+    },
+  };
 });
 
 let explodeTimeout;
@@ -74,53 +74,70 @@ function FridgeBash() {
   const [hit, setHit] = useState(false);
 
   useEffect(() => {
-      if (hit) {
-        clearTimeout(hitTimeout);
-        hitTimeout = setTimeout(() => {
-           setHit(false);
-        }, 100);
-      }
-      if (explode) {
-        clearTimeout(explodeTimeout);
-        explodeTimeout = setTimeout(() => {
-          setExplode(false);
-          const bikeBash = document.getElementById('bike-bash');
-          bikeBash.scrollIntoView({ behavior: 'smooth'});
-        }, 800);
-      }
+    if (hit) {
+      clearTimeout(hitTimeout);
+      hitTimeout = setTimeout(() => {
+        setHit(false);
+      }, 100);
+    }
+    if (explode) {
+      clearTimeout(explodeTimeout);
+      explodeTimeout = setTimeout(() => {
+        setExplode(false);
+        const bikeBash = document.getElementById('bike-bash');
+        bikeBash.scrollIntoView({ behavior: 'smooth' });
+      }, 800);
+    }
   }, [explode, hit, fridgeHits]);
 
   return (
     <div id="fridge-bash" className={classes.fridgeBash} ref={fridgeBashRef}>
       {modalOpen && (
-        <CowModal onClick={() => setModalOpen(false)} bubbleStyle={{ maxWidth: '50%', minWidth: 250 }} rotation={5}>
-          <p>Zuerst lassen wir etwas Dampf ab. Lass all deinen Frust auf vergangene Sorgen raus, auf nimmer Wiedersehen! </p>
+        <CowModal
+          onClick={() => setModalOpen(false)}
+          bubbleStyle={{ maxWidth: '50%', minWidth: 250 }}
+          rotation={5}
+        >
+          <p>
+            Zuerst lassen wir etwas Dampf ab. Lass all deinen Frust auf
+            vergangene Sorgen raus, auf nimmer Wiedersehen!{' '}
+          </p>
           <p>Schlag den alten, kaputten Kühlschrank aus deinem Gedächtnis!</p>
         </CowModal>
       )}
       <div style={{ padding: '20px 0' }}>
-        {explode && <img className={classes.explode} src={explosion} alt="explode" />}
-        {fridgeHits < 10 && ( 
-        <Button
-          className={`${classes.fridge}`}
-          onClick={(evt) => {
-            const clickCoordinate = {
-              left: evt.nativeEvent.layerX - 50,
-              top: evt.nativeEvent.layerY - 100,
-            };
-            setHit(clickCoordinate)
-            setFridgeHits(fridgeHits + 1);
-            if (fridgeHits >= 9) {
-              setExplode(true);
-            }
-          }}
-        >
-          {hit && <img style={{ top: hit.top, left: hit.left}} className={classes.hit} src={zap} alt="explode" />}
-          <Fridge />
-        </Button>)}
+        {explode && (
+          <img className={classes.explode} src={explosion} alt="explode" />
+        )}
+        {fridgeHits < 10 && (
+          <Button
+            className={`${classes.fridge}`}
+            onClick={(evt) => {
+              const clickCoordinate = {
+                left: evt.nativeEvent.layerX - 50,
+                top: evt.nativeEvent.layerY - 100,
+              };
+              setHit(clickCoordinate);
+              setFridgeHits(fridgeHits + 1);
+              if (fridgeHits >= 9) {
+                setExplode(true);
+              }
+            }}
+          >
+            {hit && (
+              <img
+                style={{ top: hit.top, left: hit.left }}
+                className={classes.hit}
+                src={zap}
+                alt="explode"
+              />
+            )}
+            <Fridge />
+          </Button>
+        )}
       </div>
     </div>
-  )
+  );
 }
 
 export default FridgeBash;

@@ -12,13 +12,13 @@ const useStyles = makeStyles((theme) => {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      position: 'relative'
+      position: 'relative',
     },
     neighbourWrapper: {
       position: 'relative',
     },
     neighbour: {
-      animation: '$pulseNeighbour 1s infinite'
+      animation: '$pulseNeighbour 1s infinite',
     },
     box: {
       position: 'absolute',
@@ -26,8 +26,8 @@ const useStyles = makeStyles((theme) => {
       left: 40,
       zIndex: 1300,
     },
-    "@keyframes pulseNeighbour": theme.createPulse(1.05),
-  }
+    '@keyframes pulseNeighbour': theme.createPulse(1.05),
+  };
 });
 
 let finishTimeout;
@@ -40,25 +40,32 @@ function NeighbourPrank() {
   return (
     <div id="neighbour-prank" className={classes.neighbourPrank}>
       {modalOpen && (
-        <CowModal onClick={() => setModalOpen(false)} rotation={-20} bubbleStyle={{ maxWidth: '50%', minWidth: 250 }}>
-          <div>Setz Gerda der Nachbarin einen Karton auf den Kopf, damit sie dich nicht mehr findet und aufhört zu nörgeln.</div>
+        <CowModal
+          onClick={() => setModalOpen(false)}
+          rotation={-20}
+          bubbleStyle={{ maxWidth: '50%', minWidth: 250 }}
+        >
+          <div>
+            Setz Gerda der Nachbarin einen Karton auf den Kopf, damit sie dich
+            nicht mehr findet und aufhört zu nörgeln.
+          </div>
         </CowModal>
       )}
       <div className={classes.neighbourWrapper}>
         <Slide direction="down" in={boxDropped} mountOnEnter unmountOnExit>
           <div className={classes.box}>
-            <CardBox height={250} width={250}/>
+            <CardBox height={250} width={250} />
           </div>
         </Slide>
         <Button
           className={`${classes.bike}`}
           onClick={() => {
-            setBoxDropped(true)
-            clearTimeout(finishTimeout)
+            setBoxDropped(true);
+            clearTimeout(finishTimeout);
             finishTimeout = setTimeout(() => {
               const cowMeadow = document.getElementById('cow-meadow');
-              cowMeadow.scrollIntoView({ behavior: 'smooth'});
-            }, 1500)
+              cowMeadow.scrollIntoView({ behavior: 'smooth' });
+            }, 1500);
           }}
         >
           <div className={classes.neighbour}>
@@ -67,7 +74,7 @@ function NeighbourPrank() {
         </Button>
       </div>
     </div>
-  )
+  );
 }
 
 export default NeighbourPrank;

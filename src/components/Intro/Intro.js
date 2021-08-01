@@ -14,18 +14,18 @@ const useStyles = makeStyles((theme) => {
       alignItems: 'center',
       color: 'white',
       height: '100vh',
-      margin: '0 20px'
+      margin: '0 20px',
     },
     button: {
       backgroundColor: 'transparent',
       width: 200,
-      animation: "$pulse 1s infinite",
+      animation: '$pulse 1s infinite',
       '&:hover': {
         backgroundColor: 'transparent',
-      }
+      },
     },
-    "@keyframes pulse": theme.createPulse(),
-  }
+    '@keyframes pulse': theme.createPulse(),
+  };
 });
 
 function Intro() {
@@ -33,26 +33,26 @@ function Intro() {
 
   return (
     <div id="landing-zone" className={classes.landing}>
-      <SpeechBubble containerStyle={{ top: 225}} >
+      <SpeechBubble containerStyle={{ top: 225 }}>
         <h2>Glückwunsch!!</h2>
         <p>Du hast es zu Kathrin's kuhlen Birthday Bash geschafft!</p>
         <p>Du kannst hier alles antippen, was sich bewegt, um fortzufahren.</p>
         <p>Streichel mich erstmal für mehr Stumpfsinn =)</p>
       </SpeechBubble>
       <div style={{ width: 210, height: 210 }}>
-        <Button 
+        <Button
           className={classes.button}
           onClick={() => {
-            const fridgeBash = document.getElementById('fridge-bash')
-            fridgeBash.scrollIntoView({ behavior: 'smooth'})
+            const fridgeBash = document.getElementById('fridge-bash');
+            fridgeBash.scrollIntoView({ behavior: 'smooth' });
           }}
         >
-          <CowFace width={200} height={200}/>
+          <CowFace width={200} height={200} />
         </Button>
       </div>
       <br />
     </div>
-  )
+  );
 }
 
 export default Intro;

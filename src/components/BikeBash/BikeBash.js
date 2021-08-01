@@ -13,8 +13,8 @@ const useStyles = makeStyles((theme) => {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      position: 'relative'
-    }, 
+      position: 'relative',
+    },
     bike: {
       animation: '$pulseFridge 1s infinite',
       padding: '20px 0',
@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => {
       zIndex: 2,
       position: 'relative',
     },
-    "@keyframes pulseFridge": theme.createPulse(),
+    '@keyframes pulseFridge': theme.createPulse(),
     explode: {
       position: 'absolute',
       top: '50%',
@@ -40,8 +40,8 @@ const useStyles = makeStyles((theme) => {
       height: 100,
       width: 100,
       zIndex: 3,
-    }
-  }
+    },
+  };
 });
 
 let explodeTimeout;
@@ -55,20 +55,20 @@ function FridgeBash() {
   const [modalOpen, setModalOpen] = useState(true);
 
   useEffect(() => {
-      if (hit) {
-        clearTimeout(hitTimeout);
-        hitTimeout = setTimeout(() => {
-           setHit(false);
-         }, 100);
-       }
-      if (explode) {
-        clearTimeout(explodeTimeout);
-         explodeTimeout = setTimeout(() => {
-            setExplode(false);
-            const neighbour = document.getElementById('neighbour-prank');
-            neighbour.scrollIntoView({ behavior: 'smooth'});
-          }, 800);
-        }
+    if (hit) {
+      clearTimeout(hitTimeout);
+      hitTimeout = setTimeout(() => {
+        setHit(false);
+      }, 100);
+    }
+    if (explode) {
+      clearTimeout(explodeTimeout);
+      explodeTimeout = setTimeout(() => {
+        setExplode(false);
+        const neighbour = document.getElementById('neighbour-prank');
+        neighbour.scrollIntoView({ behavior: 'smooth' });
+      }, 800);
+    }
   }, [explode, hit]);
 
   return (
@@ -79,29 +79,38 @@ function FridgeBash() {
         </CowModal>
       )}
       <div style={{ padding: '20px 0' }}>
-        {explode && <img className={classes.explode} src={explosion} alt="explode" />}
-        {fridgeHits < 10 && ( 
-        <Button
-          className={`${classes.bike}`}
-          onClick={(evt) => {
-            const clickCoordinate = {
-              left: evt.nativeEvent.layerX - 50,
-              top: evt.nativeEvent.layerY - 30,
-            };
-            setHit(clickCoordinate)
-            setFridgeHits(fridgeHits + 1);
-            if (fridgeHits >= 9) {
-              setExplode(true);
-            }
-          }}
-        >
-          {hit && <img style={{ top: hit.top, left: hit.left}} className={classes.hit} src={zap} alt="explode" />}
-          <Bicycle />
-        </Button>
+        {explode && (
+          <img className={classes.explode} src={explosion} alt="explode" />
+        )}
+        {fridgeHits < 10 && (
+          <Button
+            className={`${classes.bike}`}
+            onClick={(evt) => {
+              const clickCoordinate = {
+                left: evt.nativeEvent.layerX - 50,
+                top: evt.nativeEvent.layerY - 30,
+              };
+              setHit(clickCoordinate);
+              setFridgeHits(fridgeHits + 1);
+              if (fridgeHits >= 9) {
+                setExplode(true);
+              }
+            }}
+          >
+            {hit && (
+              <img
+                style={{ top: hit.top, left: hit.left }}
+                className={classes.hit}
+                src={zap}
+                alt="explode"
+              />
+            )}
+            <Bicycle />
+          </Button>
         )}
       </div>
     </div>
-  )
+  );
 }
 
 export default FridgeBash;

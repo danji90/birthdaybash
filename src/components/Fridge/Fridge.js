@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-function Fridge({ width="289.996", height="567.332" }) {
+function Fridge({ width = '289.996', height = '567.332' }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

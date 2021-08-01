@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 function Sign() {
   return (
@@ -25,7 +25,7 @@ function Sign() {
           fontWeight="normal"
           letterSpacing="0"
           transform="translate(-7.133 -10.7)"
-          style={{ lineHeight: "100%" }}
+          style={{ lineHeight: '100%' }}
           xmlSpace="preserve"
         >
           Innerer Frieden

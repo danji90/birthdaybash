@@ -9,29 +9,29 @@ import { useEffect } from 'react';
 const theme = createTheme({
   createPulse: (grow) => {
     return {
-      "0%": {
+      '0%': {
         transform: 'scale(1)',
       },
-      "50%": {
+      '50%': {
         transform: `scale(${grow || 1.05})`,
       },
-      "100%": {
+      '100%': {
         transform: 'scale(1)',
-      }
-    }
+      },
+    };
   },
   createBounce: (height) => {
     return {
-      "0%": {
+      '0%': {
         transform: 'translate(0)',
       },
-      "50%": {
+      '50%': {
         transform: `translate(0, ${height || 10}px)`,
       },
-      "100%": {
+      '100%': {
         transform: 'translate(0)',
-      }
-    }
+      },
+    };
   },
   palette: {
     primary: {
@@ -44,7 +44,7 @@ const theme = createTheme({
   props: {
     MuiButtonBase: {
       disableRipple: true,
-    }
+    },
   },
   overrides: {
     MuiButton: {
@@ -53,14 +53,14 @@ const theme = createTheme({
         letterSpacing: 0,
         fontSize: '1rem',
         lineHeight: 'unset',
-      }
-    }
-  }
+      },
+    },
+  },
 });
 
 function App() {
   useEffect(() => {
-    window.history.scrollRestoration = "manual"
+    window.history.scrollRestoration = 'manual';
   }, []);
   return (
     <ThemeProvider theme={theme}>

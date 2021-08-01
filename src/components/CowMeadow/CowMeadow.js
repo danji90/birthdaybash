@@ -21,7 +21,6 @@ const useStyles = makeStyles((theme) => {
       backgroundColor: '#cbe2ed',
       overflow: 'hidden',
       position: 'relative',
-
     },
     button: {
       backgroundColor: 'transparent',
@@ -60,15 +59,15 @@ const useStyles = makeStyles((theme) => {
       position: 'absolute',
       bottom: '40%',
       right: 10,
-      animation: "$pulseCow2 1s infinite",
+      animation: '$pulseCow2 1s infinite',
     },
     cow3: {
       position: 'absolute',
       bottom: '20%',
-      animation: "$pulseCow3 1s infinite",
+      animation: '$pulseCow3 1s infinite',
     },
     cowFlipped: {
-      animation: "$pulseCow1 1s infinite",
+      animation: '$pulseCow1 1s infinite',
     },
     signWrapper: {
       position: 'absolute',
@@ -87,11 +86,11 @@ const useStyles = makeStyles((theme) => {
         height: '100%',
       },
     },
-    "@keyframes pulseCow1": theme.createPulse(),
-    "@keyframes pulseCow2": theme.createPulse(),
-    "@keyframes pulseCow3": theme.createPulse(),
-    "@keyframes bounceSign": theme.createBounce(),
-  }
+    '@keyframes pulseCow1': theme.createPulse(),
+    '@keyframes pulseCow2': theme.createPulse(),
+    '@keyframes pulseCow3': theme.createPulse(),
+    '@keyframes bounceSign': theme.createBounce(),
+  };
 });
 
 function CowMeadow() {
@@ -99,8 +98,12 @@ function CowMeadow() {
   const refCow1 = useRef();
   const refCow2 = useRef();
   const refCow3 = useRef();
-  const [cowsState, setCowsState] = useState({cow1: false, cow2: false, cow3: false});
-  
+  const [cowsState, setCowsState] = useState({
+    cow1: false,
+    cow2: false,
+    cow3: false,
+  });
+
   return (
     <div id="cow-meadow" className={classes.cowMeadowWrapper}>
       <Paper className={classes.next1} square>
@@ -114,48 +117,67 @@ function CowMeadow() {
               anchor={{
                 left: 138,
                 bottom: -11,
-                transform: 'rotate(183deg)'
+                transform: 'rotate(183deg)',
               }}
             >
-              <p>Jetzt wo wir Einiges an Balast vernichtet haben, wird nur mehr entspannt, wiedergekaut und die schönen Dinge im Leben genossen.</p>
+              <p>
+                Jetzt wo wir Einiges an Balast vernichtet haben, wird nur mehr
+                entspannt, wiedergekaut und die schönen Dinge im Leben genossen.
+              </p>
               <p>Wir fangen an mit Kühe streicheln.</p>
             </SpeechBubble>
-            <audio ref={refCow1} src="https://dight310.byu.edu/media/audio/FreeLoops.com/2/2/Cow.wav-8988-Free-Loops.com.mp3" />
+            <audio
+              ref={refCow1}
+              src="https://dight310.byu.edu/media/audio/FreeLoops.com/2/2/Cow.wav-8988-Free-Loops.com.mp3"
+            />
             <div className={classes.cow1}>
-              <Button className={`${classes.button} ${classes.cowFlipped}`} onClick={() => {
-                if (refCow1.current) refCow1.current.play();
-                setCowsState({ ...cowsState, cow1: true})
-              }}><Cow2 width={400} height={200} /></Button>
+              <Button
+                className={`${classes.button} ${classes.cowFlipped}`}
+                onClick={() => {
+                  if (refCow1.current) refCow1.current.play();
+                  setCowsState({ ...cowsState, cow1: true });
+                }}
+              >
+                <Cow2 width={400} height={200} />
+              </Button>
             </div>
           </div>
         </div>
         <div>
           <audio ref={refCow2} src="http://thecyberbuddy.com/sounds/cow.wav" />
-          <Button className={`${classes.button} ${classes.cow2}`} onClick={() => {
-            if (refCow2.current) refCow2.current.play();
-            setCowsState({ ...cowsState, cow2: true})
-          }}><Cow2 width={100} height={50}/></Button>
+          <Button
+            className={`${classes.button} ${classes.cow2}`}
+            onClick={() => {
+              if (refCow2.current) refCow2.current.play();
+              setCowsState({ ...cowsState, cow2: true });
+            }}
+          >
+            <Cow2 width={100} height={50} />
+          </Button>
         </div>
         <div>
-          <audio ref={refCow3} src="http://www.classicalmusicproject.com/Joshuahomework/Bessie.wav" />
+          <audio
+            ref={refCow3}
+            src="http://www.classicalmusicproject.com/Joshuahomework/Bessie.wav"
+          />
           <Button
             className={`${classes.button} ${classes.cow3}`}
             onClick={() => {
               if (refCow3.current) refCow3.current.play();
-              setCowsState({ ...cowsState, cow3: true})
+              setCowsState({ ...cowsState, cow3: true });
             }}
           >
-            <Cow3 width={200} height={100}/>
+            <Cow3 width={200} height={100} />
           </Button>
         </div>
         <Slide direction="up" in={cowsState.cow1 && cowsState.cow2}>
           <div className={classes.signWrapper}>
             <div className={classes.signBounce}>
               <div className={classes.signRotate}>
-                <Button 
+                <Button
                   onClick={() => {
-                    const fridgeBash = document.getElementById('outro')
-                    fridgeBash.scrollIntoView({ behavior: 'smooth'})
+                    const fridgeBash = document.getElementById('outro');
+                    fridgeBash.scrollIntoView({ behavior: 'smooth' });
                   }}
                   className={classes.button}
                 >
@@ -167,7 +189,7 @@ function CowMeadow() {
         </Slide>
       </Paper>
     </div>
-  )
+  );
 }
 
 export default CowMeadow;

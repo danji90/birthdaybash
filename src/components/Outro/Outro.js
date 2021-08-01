@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
-import { List, ListItem, ListItemText, ListItemIcon, makeStyles } from '@material-ui/core';
-import { GiCow } from 'react-icons/gi'
+import {
+  List,
+  ListItem,
+  ListItemText,
+  ListItemIcon,
+  makeStyles,
+} from '@material-ui/core';
+import { GiCow } from 'react-icons/gi';
 
 import CowModal from '../CowModal/CowModal.js';
 
@@ -14,7 +20,7 @@ const useStyles = makeStyles((theme) => {
       alignItems: 'center',
       color: 'white',
       height: '100vh',
-      margin: '0 20px'
+      margin: '0 20px',
     },
     list: {
       display: 'flex',
@@ -27,10 +33,10 @@ const useStyles = makeStyles((theme) => {
         '& svg': {
           height: '100%',
           width: '100%',
-        }
-      }
-    }
-  }
+        },
+      },
+    },
+  };
 });
 
 function Outro() {
@@ -40,39 +46,51 @@ function Outro() {
   return (
     <div id="outro" className={classes.landing}>
       {state !== 'end' && (
-        <CowModal onClick={() => {
+        <CowModal
+          onClick={() => {
             if (!state) setState('list');
             if (state === 'list') setState('congratulate');
             if (state === 'congratulate') setState('end');
           }}
-          bubbleStyle={{ maxWidth: '50%', minWidth: 250, padding: 20 }} rotation={-30} isModal={false}
+          bubbleStyle={{ maxWidth: '50%', minWidth: 250, padding: 20 }}
+          rotation={-30}
+          isModal={false}
           bubblePadding={30}
         >
           {!state && (
             <>
-              <p>Der digitale Teil des Geburtstagsbashs ist vorbei! Back to reality!</p>
-              <p>Am Samstag den <strong>07.08.2021</strong> geht es weiter mit:</p>
+              <p>
+                Der digitale Teil des Geburtstagsbashs ist vorbei! Back to
+                reality!
+              </p>
+              <p>
+                Am Samstag den <strong>07.08.2021</strong> geht es weiter mit:
+              </p>
             </>
           )}
           {state === 'list' && (
-            <List >
-              <ListItem className={classes.list} alignItems='flex-start'>
-                <ListItemIcon><GiCow /></ListItemIcon>
-                <ListItemText primary="Frühstück ans Bett!"/>
+            <List>
+              <ListItem className={classes.list} alignItems="flex-start">
+                <ListItemIcon>
+                  <GiCow />
+                </ListItemIcon>
+                <ListItemText primary="Frühstück ans Bett!" />
               </ListItem>
-              <ListItem className={classes.list} alignItems='flex-start'>
-                <ListItemIcon><GiCow /></ListItemIcon>
-                <ListItemText primary="Friedensverinnerlichung mit Kaffee und Kuchen"/>
+              <ListItem className={classes.list} alignItems="flex-start">
+                <ListItemIcon>
+                  <GiCow />
+                </ListItemIcon>
+                <ListItemText primary="Friedensverinnerlichung mit Kaffee und Kuchen" />
               </ListItem>
-              <ListItem className={classes.list} alignItems='flex-start'>
-                <ListItemIcon><GiCow /></ListItemIcon>
-                <ListItemText primary="Überraschung in freier Natur"/>
+              <ListItem className={classes.list} alignItems="flex-start">
+                <ListItemIcon>
+                  <GiCow />
+                </ListItemIcon>
+                <ListItemText primary="Überraschung in freier Natur" />
               </ListItem>
             </List>
           )}
-          {state === 'congratulate' && (
-            <h2>Happy Birthday!</h2>
-          )}
+          {state === 'congratulate' && <h2>Happy Birthday!</h2>}
         </CowModal>
       )}
       {state === 'end' && (
@@ -83,11 +101,11 @@ function Outro() {
           title="YouTube video player"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen>
-        </iframe>
+          allowFullScreen
+        ></iframe>
       )}
     </div>
-  )
+  );
 }
 
 export default Outro;

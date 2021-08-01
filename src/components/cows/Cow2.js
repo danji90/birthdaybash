@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-function Cow2({ width=400, height=200 }) {
+function Cow2({ width = 400, height = 200 }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

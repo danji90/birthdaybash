@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core';
 const defaultAnchor = {
   right: 138,
   bottom: -11,
-  transform: 'rotate(183deg)'
+  transform: 'rotate(183deg)',
 };
 
 const useStyles = makeStyles((theme) => {
@@ -17,12 +17,13 @@ const useStyles = makeStyles((theme) => {
       color: 'black',
       width: (props) => props.width || 'auto',
       height: (props) => props.height || 'auto',
-      borderRadius: (props) => `${props.width || 200}px / ${props.height || 75}px`,
+      borderRadius: (props) =>
+        `${props.width || 200}px / ${props.height || 75}px`,
       padding: (props) => props.padding || 50,
       backgroundColor: 'white',
       position: 'relative',
       zIndex: 3,
-      border: (props) => props.border ? '4px solid #e0e0e0' : 0,
+      border: (props) => (props.border ? '4px solid #e0e0e0' : 0),
       boxSizing: 'border-box',
     },
     anchor: {
@@ -39,24 +40,32 @@ const useStyles = makeStyles((theme) => {
       clipPath: 'polygon(80% 0, 100% 100%, 0 100%)',
       backgroundColor: 'white',
       width: 40,
-	    height: 40,
+      height: 40,
       top: 10,
       left: 1,
       zIndex: 3,
     },
     anchorBorder: {
-      visibility: (props) => props.border ? 'visible' : 'hidden',
+      visibility: (props) => (props.border ? 'visible' : 'hidden'),
       position: 'absolute',
       clipPath: 'polygon(80% 0, 100% 100%, 0 100%)',
       backgroundColor: '#e0e0e0',
       width: 45,
       height: 45,
       zIndex: 1,
-    }
-  }
+    },
+  };
 });
 
-const SpeechBubble = ({ children, width, height, anchor=defaultAnchor, containerStyle, border, padding }) => {
+const SpeechBubble = ({
+  children,
+  width,
+  height,
+  anchor = defaultAnchor,
+  containerStyle,
+  border,
+  padding,
+}) => {
   const classes = useStyles({ width, height, anchor, border, padding });
 
   return (
@@ -71,7 +80,7 @@ const SpeechBubble = ({ children, width, height, anchor=defaultAnchor, container
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default SpeechBubble;

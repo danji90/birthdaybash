@@ -1,8 +1,14 @@
-import React from "react";
+import React from 'react';
 
 function CowFace({ width = '1.098', height = '1.939' }) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" version="1" viewBox="0 0 48 48" width={width} height={height}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      version="1"
+      viewBox="0 0 48 48"
+      width={width}
+      height={height}
+    >
       <defs>
         <filter
           id="filter3817"

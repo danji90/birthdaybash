@@ -31,13 +31,13 @@ const useStyles = makeStyles((theme) => {
       width: '100vw',
       maxWidth: 1000,
     },
-  }
-})
+  };
+});
 
 const disableScroll = (evt) => {
   evt.preventDefault();
   evt.stopPropagation();
-}
+};
 
 function BirthdayBash() {
   const classes = useStyles();
@@ -50,35 +50,34 @@ function BirthdayBash() {
       refAppContent.current.addEventListener('mousewheel', disableScroll);
       refAppContent.current.addEventListener('touchmove', disableScroll);
     }
-  }, [refAppContent])
+  }, [refAppContent]);
 
   useEffect(() => {
-      const container = refFireworks.current;
-      const options = {
-        maxRockets: 5, // max # of rockets to spawn
-        rocketSpawnInterval: 500, // millisends to check if new rockets should spawn
-        numParticles: 100, // number of particles to spawn when rocket explodes (+0-10)
-        explosionMinHeight: 0.4,
-        explosionChance: 0.01, // chance in each tick the rocket will explode
-        width: container.clientWidth, // override the width, defaults to container width
-        height: container.clientHeight, // override the height, defaults to container height
-        rocketInitialPoint: container.clientWidth * 0.5,
-      }
-      if (refFireworks.current && !fireWorks) {
-        setFireWorks(new FireworkCanvas(container, options))
+    const container = refFireworks.current;
+    const options = {
+      maxRockets: 5, // max # of rockets to spawn
+      rocketSpawnInterval: 500, // millisends to check if new rockets should spawn
+      numParticles: 100, // number of particles to spawn when rocket explodes (+0-10)
+      explosionMinHeight: 0.4,
+      explosionChance: 0.01, // chance in each tick the rocket will explode
+      width: container.clientWidth, // override the width, defaults to container width
+      height: container.clientHeight, // override the height, defaults to container height
+      rocketInitialPoint: container.clientWidth * 0.5,
+    };
+    if (refFireworks.current && !fireWorks) {
+      setFireWorks(new FireworkCanvas(container, options));
+    }
+    const handleResize = () => {
+      const canvas = document.getElementsByTagName('canvas');
+      refFireworks.current.removeChild(canvas[0]);
+      setFireWorks(null);
+    };
 
-      }
-      const handleResize = () => {
-        const canvas = document.getElementsByTagName('canvas');
-        refFireworks.current.removeChild(canvas[0]);
-        setFireWorks(null)
-      }
-  
-      window.addEventListener('resize', handleResize)
-  
-      return () => {
-        window.removeEventListener('resize', handleResize)
-      }
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   }, [refFireworks, fireWorks]);
 
   if (fireWorks) {
@@ -99,7 +98,7 @@ function BirthdayBash() {
         </div>
       </div>
     </>
-  )
+  );
 }
 
 export default BirthdayBash;

@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => {
       animation: '$pulseCowFace 1s infinite',
       transform: 'rotate(10deg)',
     },
-    "@keyframes pulseCowFace": theme.createPulse(),
+    '@keyframes pulseCowFace': theme.createPulse(),
     cow3: {
       position: 'relative',
       width: '50vw',
@@ -28,9 +28,8 @@ const useStyles = makeStyles((theme) => {
       alignItems: 'center',
       justifyContent: 'center',
     },
-  }
+  };
 });
-
 
 function BashIntro() {
   const classes = useStyles();
@@ -43,20 +42,23 @@ function BashIntro() {
           padding={20}
           containerStyle={{ maxWidth: 300, minWidth: 250 }}
           anchor={{
-          left: 138,
-          bottom: 5,
-          transform: 'rotate(160deg)'
+            left: 138,
+            bottom: 5,
+            transform: 'rotate(160deg)',
           }}
         >
-          <p>Zuerst lassen wir etwas Dampf ab. Lass all deinen Frust auf vergangene Sorgen raus, auf nimmer wieder sehen!</p>
+          <p>
+            Zuerst lassen wir etwas Dampf ab. Lass all deinen Frust auf
+            vergangene Sorgen raus, auf nimmer wieder sehen!
+          </p>
         </SpeechBubble>
         <div style={{ transform: 'rotate(-10deg)', width: 200 }}>
-          <Button 
+          <Button
             className={classes.button}
             onClick={() => {
               if (refCowFace.current) refCowFace.current.play();
-              const fridgeBashIntro = document.getElementById('fridge-bash')
-              fridgeBashIntro.scrollIntoView({ behavior: 'smooth'})
+              const fridgeBashIntro = document.getElementById('fridge-bash');
+              fridgeBashIntro.scrollIntoView({ behavior: 'smooth' });
             }}
           >
             <CowFace width={200} height={200} />
@@ -64,7 +66,7 @@ function BashIntro() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default BashIntro;
