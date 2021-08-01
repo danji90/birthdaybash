@@ -84,6 +84,12 @@ function Outro() {
                 <ListItemIcon>
                   <GiCow />
                 </ListItemIcon>
+                <ListItemText primary="Wohlfühlmassage" />
+              </ListItem>
+              <ListItem className={classes.list} alignItems="flex-start">
+                <ListItemIcon>
+                  <GiCow />
+                </ListItemIcon>
                 <ListItemText primary="Friedensverinnerlichung mit Kaffee und Kuchen" />
               </ListItem>
               <ListItem className={classes.list} alignItems="flex-start">
