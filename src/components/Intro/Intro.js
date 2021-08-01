@@ -36,7 +36,8 @@ function Intro() {
       <SpeechBubble containerStyle={{ top: 225}} >
         <h2>Glückwunsch!!</h2>
         <p>Du hast es zu Kathrin's kuhlen Birthday Bash geschafft!</p>
-        <p>Streichel mich für mehr Stumpfsinn </p>
+        <p>Du kannst hier alles antippen, was sich bewegt um fortzufahren :)</p>
+        <p>Streichel mich erstmal für mehr Stumpfsinn =)</p>
       </SpeechBubble>
       <div style={{ width: 210, height: 210 }}>
         <Button 
