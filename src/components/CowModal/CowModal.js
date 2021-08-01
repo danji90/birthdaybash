@@ -1,5 +1,6 @@
 import React from 'react';
 import { makeStyles, Button } from '@material-ui/core';
+import { PropTypes } from 'prop-types';
 
 import SpeechBubble from '../SpeechBubble/SpeechBubble';
 import CowFace from '../cows/CowFace';
@@ -55,5 +56,23 @@ function CowModal({
     </Button>
   );
 }
+
+CowModal.propTypes = {
+  children: PropTypes.node,
+  onClick: PropTypes.func,
+  rotation: PropTypes.number,
+  bubbleStyle: PropTypes.object,
+  isModal: PropTypes.bool,
+  bubblePadding: PropTypes.number,
+};
+
+CowModal.defaultProps = {
+  children: undefined,
+  onClick: () => {},
+  rotation: 0,
+  bubbleStyle: undefined,
+  isModal: undefined,
+  bubblePadding: undefined,
+};
 
 export default CowModal;

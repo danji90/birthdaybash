@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import { makeStyles, Button } from '@material-ui/core';
 
 import SpeechBubble from '../SpeechBubble/SpeechBubble';
-import CowFace from '../cows/CowFace.js';
+import CowFace from '../cows/CowFace';
 
 const useStyles = makeStyles((theme) => {
   return {

@@ -2,12 +2,12 @@ import React, { useRef, useEffect, useState } from 'react';
 import { makeStyles } from '@material-ui/core';
 import * as FireworkCanvas from 'fireworks-canvas';
 
-import CowMeadow from '../CowMeadow/CowMeadow.js';
-import Intro from '../Intro/Intro.js';
-import Outro from '../Outro/Outro.js';
-import FridgeBash from '../FridgeBash/FridgeBash.js';
-import BikeBash from '../BikeBash/BikeBash.js';
-import NeighbourPrank from '../NeighbourPrank/NeighbourPrank.js';
+import CowMeadow from '../CowMeadow/CowMeadow';
+import Intro from '../Intro/Intro';
+import Outro from '../Outro/Outro';
+import FridgeBash from '../FridgeBash/FridgeBash';
+import BikeBash from '../BikeBash/BikeBash';
+import NeighbourPrank from '../NeighbourPrank/NeighbourPrank';
 
 const useStyles = makeStyles((theme) => {
   return {

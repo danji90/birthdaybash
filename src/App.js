@@ -3,8 +3,8 @@ import { createTheme, ThemeProvider } from '@material-ui/core/styles';
 import purple from '@material-ui/core/colors/purple';
 import green from '@material-ui/core/colors/green';
 
+import React, { useEffect } from 'react';
 import BirthdayBash from './components/BirthdayBash';
-import { useEffect } from 'react';
 
 const theme = createTheme({
   createPulse: (grow) => {

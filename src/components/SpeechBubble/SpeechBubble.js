@@ -1,5 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core';
+import { PropTypes } from 'prop-types';
 
 const defaultAnchor = {
   right: 138,
@@ -81,6 +82,26 @@ const SpeechBubble = ({
       </div>
     </div>
   );
+};
+
+SpeechBubble.propTypes = {
+  children: PropTypes.node,
+  width: PropTypes.number,
+  height: PropTypes.number,
+  anchor: PropTypes.object,
+  containerStyle: PropTypes.object,
+  border: PropTypes.number,
+  padding: PropTypes.number,
+};
+
+SpeechBubble.defaultProps = {
+  children: undefined,
+  width: undefined,
+  height: undefined,
+  anchor: undefined,
+  containerStyle: undefined,
+  border: undefined,
+  padding: undefined,
 };
 
 export default SpeechBubble;

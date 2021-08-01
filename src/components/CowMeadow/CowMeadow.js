@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/media-has-caption */
 import React, { useRef, useState } from 'react';
 import { makeStyles, Paper, Button, Slide } from '@material-ui/core';
 

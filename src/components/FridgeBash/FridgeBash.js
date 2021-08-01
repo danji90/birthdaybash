@@ -100,7 +100,8 @@ function FridgeBash() {
         >
           <p>
             Zuerst lassen wir etwas Dampf ab. Lass all deinen Frust auf
-            vergangene Sorgen raus, auf nimmer Wiedersehen!{' '}
+            vergangene Sorgen raus, auf nimmer Wiedersehen!
+            {' '}
           </p>
           <p>Schlag den alten, kaputten Kühlschrank aus deinem Gedächtnis!</p>
         </CowModal>

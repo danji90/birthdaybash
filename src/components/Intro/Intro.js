@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles, Button } from '@material-ui/core';
 
-import CowFace from '../cows/CowFace.js';
+import CowFace from '../cows/CowFace';
 import SpeechBubble from '../SpeechBubble/SpeechBubble';
 
 const useStyles = makeStyles((theme) => {
@@ -35,7 +35,7 @@ function Intro() {
     <div id="landing-zone" className={classes.landing}>
       <SpeechBubble containerStyle={{ top: 225 }}>
         <h2>Glückwunsch!!</h2>
-        <p>Du hast es zu Kathrin's kuhlen Birthday Bash geschafft!</p>
+        <p>Du hast es zu Kathrins kuhlen Birthday Bash geschafft!</p>
         <p>Du kannst hier alles antippen, was sich bewegt, um fortzufahren.</p>
         <p>Streichel mich erstmal für mehr Stumpfsinn =)</p>
       </SpeechBubble>

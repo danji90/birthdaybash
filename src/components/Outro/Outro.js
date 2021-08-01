@@ -8,7 +8,7 @@ import {
 } from '@material-ui/core';
 import { GiCow } from 'react-icons/gi';
 
-import CowModal from '../CowModal/CowModal.js';
+import CowModal from '../CowModal/CowModal';
 
 const useStyles = makeStyles((theme) => {
   return {
@@ -64,7 +64,11 @@ function Outro() {
                 reality!
               </p>
               <p>
-                Am Samstag den <strong>07.08.2021</strong> geht es weiter mit:
+                Am Samstag den 
+                {' '}
+                <strong>07.08.2021</strong>
+                {' '}
+                geht es weiter mit:
               </p>
             </>
           )}
@@ -102,7 +106,7 @@ function Outro() {
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
-        ></iframe>
+        />
       )}
     </div>
   );

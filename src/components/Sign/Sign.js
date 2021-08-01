@@ -12,7 +12,7 @@ function Sign() {
         <path
           id="diFrDEn85"
           d="M31.12 186.14H320l76.08 49.93-76.08 42.8H210.15l2.42 299.58h-43.55l-4.13-299.58H31.12z"
-        ></path>
+        />
         <text
           id="emNqbugg"
           x="100.35"
@@ -44,7 +44,7 @@ function Sign() {
                 fillOpacity="1"
                 opacity="1"
                 xlinkHref="#diFrDEn85"
-              ></use>
+              />
             </g>
             <g transform="translate(-17.857 36.429)">
               <use
@@ -56,7 +56,7 @@ function Sign() {
                 fillOpacity="1"
                 opacity="1"
                 xlinkHref="#emNqbugg"
-              ></use>
+              />
             </g>
           </g>
         </g>
