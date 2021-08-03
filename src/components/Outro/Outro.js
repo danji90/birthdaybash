@@ -64,7 +64,7 @@ function Outro() {
                 reality!
               </p>
               <p>
-                Wochenende geht es weiter mit:
+                Am Wochenende geht es weiter mit:
               </p>
             </>
           )}
