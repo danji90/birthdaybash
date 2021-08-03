@@ -64,11 +64,7 @@ function Outro() {
                 reality!
               </p>
               <p>
-                Am Samstag den 
-                {' '}
-                <strong>07.08.2021</strong>
-                {' '}
-                geht es weiter mit:
+                Wochenende geht es weiter mit:
               </p>
             </>
           )}
